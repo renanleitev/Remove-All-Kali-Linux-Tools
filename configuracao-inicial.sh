@@ -1,6 +1,8 @@
 #!/bin/bash
 # Definindo a senha sudo
 PASSWORD='kali';
+# Mudando o teclado para pt-br
+echo -e $PASSWORD | sudo -S sed -i 's/us/br/' /etc/default/keyboard; 
 # Atualizando o sistema
 echo -e $PASSWORD | sudo -S apt update;
 # Instalando o snap
