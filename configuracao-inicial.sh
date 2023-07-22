@@ -1,5 +1,5 @@
 #!/bin/bash
-# Definindo a senha sudo
+# Definindo a senha sudo (modificar se não for 'kali')
 PASSWORD='kali';
 # Mudando o teclado para pt-br
 echo -e $PASSWORD | sudo -S sed -i 's/us/br/' /etc/default/keyboard; 
@@ -42,6 +42,7 @@ echo -e $PASSWORD | sudo -S snap install snap-store;
 # Gerando atalhos na área de trabalho
 cp /var/lib/snapd/desktop/applications/* ~/Desktop;
 # Encerrando o script
-echo 'Fim do script';
-
+echo 'Fim do script. Reiniciando o sistema...';
+# Reiniciando o sistema
+echo -e $PASSWORD | sudo -S reboot;
 
