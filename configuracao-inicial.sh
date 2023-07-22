@@ -10,6 +10,8 @@ echo -e $PASSWORD | sudo -S apt install snapd -y;
 # Configurando o snap para iniciar junto com o sistema
 echo -e $PASSWORD | sudo -S systemctl enable snapd;
 echo -e $PASSWORD | sudo -S systemctl start snapd;
+echo -e $PASSWORD | sudo -S systemctl enable apparmor;
+echo -e $PASSWORD | sudo -S systemctl start apparmor;
 # Configurando o snap, para funcionar com o sudo
 echo -e $PASSWORD | sudo -S sed -i 's/\/bin\"/\/bin\:\/snap\/bin\"/' /etc/sudoers;
 # Adicionando o caminho dos snaps junto ao sistema
