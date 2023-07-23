@@ -8,8 +8,7 @@ echo -e $PASSWORD | sudo -S apt update;
 # Instalando o snap
 echo -e $PASSWORD | sudo -S apt install snapd -y;
 # Configurando o snap para iniciar junto com o sistema
-echo -e $PASSWORD | sudo -S systemctl enable snapd.socket snapd apparmor;
-echo -e $PASSWORD | sudo -S systemctl start snapd.socket snapd apparmor;
+echo -e $PASSWORD | sudo -S systemctl enable --now snapd snapd.socket snapd.apparmor;
 # Configurando o snap, para funcionar com o sudo
 echo -e $PASSWORD | sudo -S sed -i 's/\/bin\"/\/bin\:\/snap\/bin\"/' /etc/sudoers;
 # Adicionando o caminho dos snaps junto ao sistema
