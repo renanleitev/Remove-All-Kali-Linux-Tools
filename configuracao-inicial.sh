@@ -16,6 +16,8 @@ echo 'export PATH=$PATH:/snap/bin' >> .zshrc;
 # Instalando aplicativos. Se não quiser instalar algum, usar # no começo da frase
 # Instalando o docker
 echo -e $PASSWORD | sudo -S snap install docker;
+# Instalando o sublime text (editor de texto)
+echo -e $PASSWORD | sudo -S snap install sublime-text --classic;
 # Instalando o mysql-workbench-community
 echo -e $PASSWORD | sudo -S snap install mysql-workbench-community;
 # Instalando o vs code 
@@ -44,4 +46,3 @@ cp /var/lib/snapd/desktop/applications/* ~/Desktop;
 echo 'Fim do script. Reiniciando o sistema...';
 # Reiniciando o sistema
 echo -e $PASSWORD | sudo -S reboot;
-
